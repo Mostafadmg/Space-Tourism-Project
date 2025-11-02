@@ -1,0 +1,111 @@
+.btn {
+  cursor: pointer;
+  position: relative; // needed for ::after positioning
+  text-transform: uppercase;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  border: none;
+  color: var(--color-blue-900, #0b0d17);
+  font-feature-settings: "liga" off, "clig" off;
+  /* mobile/text-preset-4 */
+  font-family: "Bellefair";
+  font-size: var(--font-size-mobile-text-preset-4, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+
+  @include media($tablet) {
+    width: 17rem;
+    height: 17rem;
+    /* tablet/text-preset-4 */
+    font-size: var(--font-size-tablet-text-preset-4, 1.5rem);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    animation: pulse 1.2s linear infinite;
+  }
+}
+
+/* hamburger menu */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  display: block;
+  top: 3.5rem;
+  right: 2rem;
+  z-index: 10;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &-top,
+  &-middle,
+  &-bottom {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background-color: $color-white;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease;
+  }
+
+  &-top {
+    transform: translateY(7px);
+  }
+  &-bottom {
+    transform: translateY(14px);
+  }
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* border bottom btn effect  */
+
+.border-bottom-btn {
+  color: $color-white;
+  padding-block: $space-400;
+  border-bottom: transparent 4px solid;
+  transition: border 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: $color-white 4px solid;
+  }
+}

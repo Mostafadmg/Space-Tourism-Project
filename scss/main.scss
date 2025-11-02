@@ -1,0 +1,41 @@
+// ==========================================
+// MAIN SCSS FILE
+// ==========================================
+
+// 1. Abstracts (helpers, variables, mixins)
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/placeholders";
+@import "abstract/variables";
+
+// 2. Animations (make sure this line matches your folder + file name)
+@import "animations/animation"; // ✅ Folder: animations / File: _animation.scss
+
+// 3. Base (resets, typography, global elements)
+@import "base/reset";
+@import "base/typography";
+
+// 4. Layout (page structure)
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+// 5. Components (buttons, cards, navbars, etc.)
+@import "components/button";
+@import "components/card";
+@import "components/navbar";
+@import "components/hero";
+@import "components/page-heading";
+
+// 6. Pages (page-specific styles)
+@import "pages/home";
+@import "pages/destination";
+@import "pages/crew";
+@import "pages/technology";
+
+// 7. Themes (light/dark modes)
+@import "themes/light";
+@import "themes/dark";
+
+// 8. Vendors (third-party libraries)
+// (currently empty)

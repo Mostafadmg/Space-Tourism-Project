@@ -1,0 +1,95 @@
+.hero {
+  padding: $space-300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 80vh;
+
+  @include media($desktop) {
+    flex-direction: row;
+    padding-bottom: 10rem;
+    justify-content: center;
+    gap: $space-1600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-300;
+    text-align: center;
+
+    @include media($desktop) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $color-blue-300;
+    text-align: center;
+    font-feature-settings: "liga" off, "clig" off;
+
+    /* mobile/text-preset-6 */
+    font-family: "Barlow Condensed";
+    font-size: var(--font-size-mobile-text-preset-6, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15rem;
+
+    @include media($tablet) {
+      /* tablet/text-preset-6 */
+      font-size: var(--font-size-tablet-text-preset-6, 1.75rem);
+    }
+    &-highlight {
+      align-self: stretch;
+      color: var(--color-white, #fff);
+      text-align: center;
+      font-feature-settings: "liga" off, "clig" off;
+
+      /* mobile/text-preset-1 */
+      font-family: Bellefair;
+      font-size: var(--font-size-mobile-text-preset-1, 5rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: block;
+      margin-top: $space-300;
+
+      @include media($tablet) {
+        /* tablet/text-preset-1 */
+        font-size: var(--font-size-tablet-text-preset-1, 9.375rem);
+      }
+    }
+  }
+
+  &__text {
+    color: var(--color-blue-300, #d0d6f9);
+    text-align: center;
+    font-feature-settings: "liga" off, "clig" off;
+
+    /* mobile/text-preset-9 */
+    font-family: Barlow;
+    font-size: var(--font-size-mobile-text-preset-9, 0.9375rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 1.6875rem */
+    max-width: 25rem;
+  }
+
+  &-explore-btn {
+    margin-top: $space-600;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media($desktop) {
+      align-self: flex-end;
+      margin-bottom: 3.5rem;
+    }
+  }
+}

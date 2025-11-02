@@ -1,0 +1,277 @@
+.destination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-300;
+
+  @include media($desktop) {
+    justify-content: center;
+    gap: $space-400;
+    padding-top: 10rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-400;
+    padding: $space-300;
+    transition: padding 0.3s ease-in-out;
+
+    @include media($desktop) {
+      flex-direction: row;
+      gap: $space-800;
+    }
+  }
+
+  &__image {
+    width: 9.375rem;
+    height: 9.375rem;
+    animation: rotate-planet 50s linear infinite;
+    transition: opacity 0.5s ease-in-out;
+
+    @include media($tablet) {
+      width: 28.56744rem;
+      height: 28.56744rem;
+      flex-shrink: 0;
+    }
+
+    @include media($desktop) {
+      width: 30rem;
+      height: 30rem;
+    }
+
+    &-container {
+      margin-bottom: $space-500;
+      margin-top: $space-500;
+      transition: margin 0.3s ease-in-out; // ✅ ADDED
+    }
+  }
+
+  &__explanation {
+    display: flex;
+    flex-direction: column;
+    gap: $space-300;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px; // ✅ ADDED - Prevents layout shift
+    transition: all 0.3s ease-in-out; // ✅ ADDED
+
+    @include media($tablet) {
+      min-height: 650px; // ✅ ADDED
+      margin-top: -8rem;
+    }
+
+    @include media($desktop) {
+      align-items: flex-start;
+      min-height: auto;
+      min-width: 550px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: $space-400;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tab {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: $color-blue-300;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.13125rem;
+    font-family: "Barlow Condensed";
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding-bottom: $space-200;
+    transition: border-bottom-color 0.3s ease;
+
+    @include media($tablet) {
+      font-size: 2rem;
+    }
+    &:hover {
+      border-bottom-color: $color-white;
+    }
+
+    &--active {
+      border-bottom-color: $color-white;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-300;
+    text-align: center;
+    max-width: 25rem;
+    justify-content: flex-end;
+    transition: all 0.3s ease-in-out;
+
+    @include media($tablet) {
+      max-width: 35rem;
+    }
+
+    @include media($desktop) {
+      align-items: flex-start;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      font-family: "Bellefair", serif;
+      font-weight: 400;
+      line-height: normal;
+      transition: opacity 0.3s ease-in-out;
+      min-height: 4rem; // ✅ ADDED - Reserves space for title
+
+      @include media($tablet) {
+        font-size: 5rem;
+        min-height: 5.5rem; // ✅ ADDED
+      }
+
+      @include media($desktop) {
+        font-size: 6rem;
+        min-height: 6.5rem; // ✅ ADDED
+      }
+    }
+
+    &-text {
+      color: $color-blue-300;
+      font-family: "Barlow", sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 180%;
+      transition: opacity 0.3s ease-in-out;
+
+      @include media($tablet) {
+      }
+
+      @include media($desktop) {
+      }
+    }
+
+    @include media($desktop) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $color-blue-300;
+
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in-out; // ✅ ADDED
+  }
+
+  &__statistics {
+    display: flex;
+    flex-direction: column;
+    gap: $space-300;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out; // ✅ ADDED
+    width: 100%;
+
+    @include media($tablet) {
+      flex-direction: row;
+      align-self: stretch;
+      gap: $space-800;
+      justify-content: center;
+    }
+
+    @include media($desktop) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+
+    transition: all 0.3s ease-in-out; // ✅ ADDED
+
+    @include media($desktop) {
+      align-items: flex-start;
+      text-align: left;
+      flex: 0 0 200px;
+    }
+  }
+
+  &__label {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: $color-blue-300;
+    text-align: center;
+    font-family: "Barlow Condensed", sans-serif;
+    transition: opacity 0.3s ease-in-out; // ✅ ADDED
+  }
+
+  &__value {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: "Bellefair", serif;
+    font-size: 1.75rem;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+    min-width: 120px; // ✅ ADDED - Prevents horizontal jumping
+    min-height: 2rem; // ✅ ADDED - Prevents vertical jumping
+  }
+}
+/*  */
+/*  */
+/* background images for the body */
+body.destination-page {
+  /* Mobile first - default (mobile) image */
+  background-image: url("../../assets/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  body.destination {
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+  }
+}
+
+/* Desktop / large screens */
+@media (min-width: 1024px) {
+  body.destination {
+    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+  }
+}
+
+.main-destination {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+
+  @include media($desktop) {
+    padding-block: 2rem;
+    max-height: 100vh;
+  }
+}

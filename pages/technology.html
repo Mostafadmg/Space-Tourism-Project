@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/scripts.js" defer></script>
+    <title>Space tourism website Technology Page</title>
+  </head>
+  <body class="technology-page">
+    <header class="header">
+      <div class="header__logo">
+        <img src="../assets/shared/logo.svg" alt="" class="header__logo-img" />
+      </div>
+      <div class="header-line"></div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="destination.html" class="nav__link">Destination</a>
+          </li>
+          <li class="nav__item"><a href="crew.html" class="nav__link">Crew</a></li>
+          <li class="nav__item">
+            <a href="technology.html" class="nav__link">Technology</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- burger menu button -->
+      <button class="hamburger" id="menu-btn">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+      <!-- burger Menu items -->
+      <div class="burger-menu" id="burger-menu">
+        <ul class="burger-menu__list">
+          <li class="burger-menu__item">
+            <a href="../index.html" class="burger-menu__link">00 Home</a>
+          </li>
+          <li class="burger-menu__item">
+            <a href="destination.html" class="burger-menu__link">01 Destination</a>
+          </li>
+          <li class="burger-menu__item">
+            <a href="crew.html" class="burger-menu__link">02 Crew</a>
+          </li>
+          <li class="burger-menu__item">
+            <a href="technology.html" class="burger-menu__link">03 Technology</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="technology__main">
+      <section class="technology">
+        <!-- Page heading component (separate block) -->
+        <div class="page-heading technology__heading">
+          <h2><span>03</span>Space Launch 101</h2>
+        </div>
+
+        <!-- Crew content wrapper -->
+        <div class="technology__content">
+          <!-- Crew text/details section -->
+          <picture class="technology__img-container">
+            <source
+              media="(min-width: 1024px)"
+              srcset="../assets/technology/image-launch-vehicle-portrait.jpg"
+            />
+
+            <!-- Default (mobile-first): portrait image -->
+            <img
+              src="../assets/technology/image-launch-vehicle-landscape.jpg"
+              alt="Launch vehicle"
+              class="technology__img"
+            />
+          </picture>
+          <!-- Pagination and text -->
+          <div class="technology__details">
+            <!-- Pagination -->
+            <div class="technology__pagination">
+              <button
+                class="technology__pagination-btn technology__pagination-btn--active"
+                aria-label="Launch vehicle"
+                data-tech-index="0"
+              >
+                1
+              </button>
+              <button
+                class="technology__pagination-btn"
+                aria-label="Spaceport"
+                data-tech-index="1"
+              >
+                2
+              </button>
+              <button
+                class="technology__pagination-btn"
+                aria-label="Space capsule"
+                data-tech-index="2"
+              >
+                3
+              </button>
+            </div>
+            <div class="technology__explanation">
+              <div class="technology__text-box">
+                <p
+                  class="technology__terminology text-bellefair text-bellefair__secondary"
+                >
+                  The terminology...
+                </p>
+                <h3 class="technology__name text-bellefair text-bellefair__primary">
+                  Launch vehicle
+                </h3>
+              </div>
+              <p class="technology__description text-bellafair">
+                A launch vehicle or carrier rocket is a rocket-propelled vehicle used to
+                carry a payload from Earth's surface to space, usually to Earth orbit or
+                beyond. Our WEB-X carrier rocket is the most powerful in operation.
+                Standing 150 metres tall, it's quite an awe-inspiring sight on the launch
+                pad!
+              </p>
+            </div>
+          </div>
+
+          <!--  explanation-->
+
+      </section>
+    </main>
+
+  </body>
+</html>

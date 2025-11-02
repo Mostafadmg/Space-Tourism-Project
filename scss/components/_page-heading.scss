@@ -1,0 +1,39 @@
+// components/_page-heading.scss
+
+.page-heading {
+  margin-top: 2rem;
+  align-self: center;
+  margin-left: 1.25rem;
+  @include media($tablet) {
+    align-self: flex-start;
+  }
+
+  & h2 {
+    color: var(--color-white, #fff);
+    font-feature-settings: "liga" off, "clig" off;
+    font-family: "Barlow Condensed";
+    font-size: var(--font-size-tablet-text-preset-5, 1.25rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+
+    @include media($desktop) {
+      font-size: 1.75rem;
+    }
+  }
+
+  & h2 span {
+    color: var(--color-white, #fff);
+    font-feature-settings: "liga" off, "clig" off;
+    font-family: "Barlow Condensed";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1875rem;
+    opacity: 0.25;
+    padding-right: 1.25rem;
+  }
+}

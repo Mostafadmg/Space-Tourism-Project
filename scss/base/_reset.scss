@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  color: $color-blue-300;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: "Bellefair", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none; /* Remove bullets or numbers */
+  margin: 0; /* Remove browser default spacing */
+  padding: 0;
+}
+a,
+a:visited {
+  color: inherit; /* Use the same color as the parent element */
+  text-decoration: none; /* Remove underline */
+  background: none; /* Remove any background */
+  font: inherit; /* Inherit font style and weight */
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}

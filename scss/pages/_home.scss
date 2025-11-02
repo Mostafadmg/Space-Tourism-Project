@@ -1,0 +1,23 @@
+/* Home page background images.
+	 Scoped to `body.home` so only the home page gets these backgrounds. */
+body.home {
+  /* Mobile first - default (mobile) image */
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  body.home {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+}
+
+/* Desktop / large screens */
+@media (min-width: 1024px) {
+  body.home {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+}

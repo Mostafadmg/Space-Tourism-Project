@@ -1,0 +1,294 @@
+.technology {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: $space-800; // ✅ Reduced gap for better mobile spacing
+  height: 100%;
+
+  @include media($tablet) {
+    gap: $space-500;
+  }
+
+  @include media($desktop) {
+    gap: $space-400;
+    margin-top: -5rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 6rem); // ✅ Subtract header height
+
+    @include media($tablet) {
+      min-height: calc(100vh - 7rem); // ✅ Adjust if header is taller on tablet
+    }
+
+    @include media($desktop) {
+      min-height: calc(100vh - 8rem); // ✅ Adjust if header is taller on desktop
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-800;
+
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+
+    @include media($tablet) {
+      gap: $space-500;
+    }
+
+    @include media($desktop) {
+      flex-direction: row-reverse; /* or column-reverse */
+      gap: $space-400;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    & picture {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      object-fit: contain;
+
+      @include media($desktop) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+
+    @include media($desktop) {
+      object-fit: contain;
+      width: clamp(38rem, 30vw, 40vw);
+      height: clamp(63.8125rem, 50vh, 70vh);
+    }
+
+    &-container {
+      width: 100vw;
+      height: auto;
+      min-height: 170px;
+      margin-left: calc(-50vw + 50%);
+
+      @include media($tablet) {
+        min-height: 310px;
+      }
+
+      @include media($desktop) {
+        width: auto;
+        height: auto;
+        max-height: 60vh;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: $space-300; // ✅ Reduced gap for mobile
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: $space-300;
+    padding-bottom: $space-400;
+    width: 100%;
+    height: auto;
+
+    @include media($tablet) {
+      gap: $space-500;
+      padding-inline: $space-500;
+    }
+
+    @include media($desktop) {
+      gap: $space-600;
+
+      flex-direction: row;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    gap: $space-200;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    @include media($tablet) {
+      gap: $space-300;
+    }
+
+    @include media($desktop) {
+      flex-direction: column;
+      gap: $space-600;
+    }
+
+    &-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: transparent;
+      color: $color-white;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      font-family: "Bellefair";
+      transition: all 0.3s ease;
+
+      @include media($tablet) {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+      }
+
+      @include media($desktop) {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+      }
+
+      &:hover {
+        border: 1px solid $color-white;
+        background-color: $color-white;
+        color: black;
+      }
+
+      &--active {
+        background-color: $color-white;
+        color: black;
+        border: 1px solid $color-white;
+      }
+    }
+  }
+
+  &__explanation {
+    display: flex;
+    flex-direction: column;
+    gap: $space-200;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    @include media($tablet) {
+      gap: $space-300;
+    }
+
+    @include media($desktop) {
+      gap: $space-400;
+      align-items: flex-start;
+    }
+  }
+
+  &__description {
+    max-width: 30rem;
+    font-size: 0.9375rem; // ✅ Add font size for better scaling
+    line-height: 1.6;
+
+    @include media($tablet) {
+      font-size: 1rem;
+    }
+
+    @include media($desktop) {
+      font-size: 1.125rem;
+      min-width: 30rem;
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    gap: $space-100; // ✅ Smaller gap for mobile
+
+    @include media($tablet) {
+      gap: $space-200;
+    }
+  }
+
+  &__terminology {
+    font-size: 0.875rem;
+
+    @include media($tablet) {
+      font-size: 1rem;
+    }
+  }
+
+  &__name {
+    font-size: 1.5rem;
+
+    @include media($tablet) {
+      font-size: 2.5rem;
+    }
+
+    @include media($desktop) {
+      font-size: 3.5rem;
+      min-width: 30rem !important;
+    }
+  }
+
+  &__terminology {
+    font-size: 1.125rem;
+
+    @include media($tablet) {
+      font-size: 1.5rem;
+    }
+
+    @include media($desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__heading {
+    @include media($desktop) {
+      padding-left: 3rem;
+    }
+  }
+
+  &__img,
+  &__name,
+  &__terminology,
+  &__description {
+    transition: opacity 0.4s ease;
+    will-change: opacity;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Background images */
+/* ---------------------------------------------------------------------- */
+body.technology-page {
+  background-image: url("../../assets/technology/background-technology-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh; // ✅ Ensure body can grow
+}
+
+@media (min-width: 768px) {
+  body.technology-page {
+    background-image: url("../../assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  body.technology-page {
+    background-image: url("../../assets/technology/background-technology-desktop.jpg");
+  }
+}

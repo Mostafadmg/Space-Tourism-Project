@@ -1,0 +1,98 @@
+// Typography rules: body font, heading font and nav styles
+
+// Default body font stack (fallback to system sans)
+body {
+  font-family: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  color: $text-color-on-dark;
+  background-color: $bg-color;
+}
+
+// Display / headings - use Bellefair for large headings (if needed)
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bellefair", Georgia, serif;
+}
+
+/* Navigation styling helper — use this class on nav links to get the condensed,
+	 uppercase, spaced look from the screenshot. */
+.nav-link,
+header a,
+.navbar a {
+  font-family: "Barlow Condensed", "Barlow", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px; // adjust to taste (px)
+  font-weight: 400;
+  font-size: 16px;
+  color: $color-blue-300;
+  text-decoration: none;
+}
+
+/* Active / hover state example */
+.nav-link:hover,
+.navbar a:hover,
+header a:hover {
+  color: $color-white;
+}
+
+.text-bellefair {
+  font-family: "Bellefair", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  font-feature-settings: "liga" off, "clig" off;
+  text-align: center;
+
+  &__primary {
+    font-size: 1.5rem;
+    min-height: 2rem;
+
+    @include media($tablet) {
+      font-size: 2.5rem;
+    }
+    @include media($desktop) {
+      max-width: 25rem;
+    }
+  }
+
+  &__secondary {
+    opacity: 0.5;
+    min-height: 1.5rem;
+    font-size: 1rem;
+
+    @include media($tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include media($desktop) {
+    text-align: left; // ✅ ADDED - Left align on desktop
+  }
+}
+
+.text-bellafair {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+  color: $color-blue-300;
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  min-height: 150px;
+  transition: opacity 0.3s ease-in-out;
+
+  @include media($tablet) {
+    font-size: 1.125rem;
+  }
+
+  @include media($desktop) {
+    text-align: left; // ✅ ADDED - Left align on desktop
+  }
+
+  &-text {
+    transition: opacity 0.3s ease-in-out;
+  }
+}

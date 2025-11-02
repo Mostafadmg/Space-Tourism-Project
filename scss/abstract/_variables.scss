@@ -1,0 +1,31 @@
+// ==================================================
+// Project variables
+// Place global colors, spacing, breakpoints and other design tokens here.
+// ==================================================
+
+// Colors
+$color-blue-900: #0b0d17; // very dark blue (used as page background)
+$color-blue-300: #d0d6f9; // pale blue (accent)
+$color-white: #ffffff;
+
+// Semantic aliases (optional)
+$bg-color: $color-blue-900;
+$accent-color: $color-blue-300;
+$text-color-on-dark: $color-white;
+
+// Spacing scale (names mirror the design tokens in the style guide)
+// Spacing scale (simple variables)
+$space-1600: 128px;
+$space-1400: 110px;
+$space-1200: 96px;
+$space-1000: 80px;
+$space-800: 64px;
+$space-600: 48px;
+$space-500: 40px;
+$space-400: 32px;
+$space-300: 24px;
+$space-200: 16px;
+$space-150: 12px;
+$space-100: 8px;
+$space-50: 4px;
+$space-25: 2px;

@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  padding: $space-300;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  &__text {
+    font-family: "Barlow", sans-serif;
+    font-size: 0.875rem;
+    color: $color-blue-300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__link {
+    color: $color-white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-blue-300;
+      text-decoration: underline;
+    }
+  }
+}
