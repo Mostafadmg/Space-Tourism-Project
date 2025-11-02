@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* load the package Json */
 async function loadData() {
   try {
-    const response = await fetch("/data.json");
+    const response = await fetch("../data.json");
     const data = await response.json();
 
     myData.destinations = data.destinations;
