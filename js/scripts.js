@@ -63,7 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 /* load the package Json */
 async function loadData() {
   try {
-    const response = await fetch("../data.json");
+    // ✅ Automatically detects if you're on /pages/ subfolder or not
+    const basePath = window.location.pathname.includes("/pages/")
+      ? "../data.json"
+      : "./data.json";
+
+    const response = await fetch(basePath);
     const data = await response.json();
 
     myData.destinations = data.destinations;
