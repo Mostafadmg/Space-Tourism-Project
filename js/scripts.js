@@ -245,3 +245,139 @@ const updateTechnologyContent = (techIndex) => {
     if (techImage) techImage.style.opacity = "1";
   }, 400);
 };
+
+/* swipe feature for mobile phones*/
+
+const pages = [
+  { name: "home", path: "index.html" },
+  { name: "destination", path: "pages/destination.html" },
+  { name: "crew", path: "pages/crew.html" },
+  { name: "technology", path: "pages/technology.html" },
+];
+/*  this function returns the index of the current page it works by
+1- getting the current path from the window location
+2- extracting the current page name from the path
+3- finding the index of the page in the pages array
+*/
+function getCurrentPageIndex() {
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split("/").pop() || "index.html";
+
+  return pages.findIndex((page) => {
+    if (currentPage === "" || currentPage === "index.html") {
+      return page.name === "home";
+    }
+    return currentPage === page.path.split("/").pop();
+  });
+}
+
+/*
+then we create Navigation Function that takes a direction parameter ('left' or 'right') and navigates to the previous or next page accordingly.
+
+
+
+*/
+function navigateToPage(index) {
+  if (index >= 0 && index < pages.length) {
+    const targetPage = pages[index];
+
+    // Check if we're currently in the /pages/ folder
+    const isInPagesFolder = window.location.pathname.includes("/pages/");
+    let targetPath;
+
+    if (targetPage.name === "home") {
+      // Going to home page
+      targetPath = isInPagesFolder ? "../index.html" : "index.html";
+    } else {
+      // Going to another page (destination, crew, or technology)
+      if (isInPagesFolder) {
+        // We're already in /pages/, so just use the filename
+        targetPath = targetPage.path.split("/").pop(); // Gets "crew.html" from "./pages/crew.html"
+      } else {
+        // We're on home page, use full path
+        targetPath = targetPage.path; // "./pages/crew.html"
+      }
+    }
+
+    window.location.href = targetPath;
+  }
+}
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+
+const minSwipeDistance = 50;
+const maxVerticalDistance = 100;
+function handleSwipe() {
+  const currentPageIndex = getCurrentPageIndex();
+  const horizontalDistance = touchEndX - touchStartX;
+  const verticalDistance = Math.abs(touchEndY - touchStartY);
+
+  if (
+    Math.abs(horizontalDistance) > minSwipeDistance &&
+    verticalDistance < maxVerticalDistance
+  ) {
+    if (horizontalDistance > 0) {
+      // Swipe right - go to previous page
+      if (currentPageIndex > 0) {
+        navigateToPage(currentPageIndex - 1);
+      }
+    } else {
+      // Swipe left - go to next page
+      if (currentPageIndex < pages.length - 1) {
+        navigateToPage(currentPageIndex + 1);
+      }
+    }
+  }
+}
+document.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  },
+  { passive: true }
+);
+
+document.addEventListener(
+  "touchend",
+  (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  },
+  { passive: true }
+);
+let swipeIndicator = null;
+
+document.addEventListener(
+  "touchmove",
+  (e) => {
+    const currentX = e.changedTouches[0].screenX;
+    const currentY = e.changedTouches[0].screenY;
+    const deltaX = currentX - touchStartX;
+    const deltaY = Math.abs(currentY - touchStartY);
+
+    if (Math.abs(deltaX) > 30 && deltaY < 100) {
+      if (!swipeIndicator) {
+        swipeIndicator = document.createElement("div");
+        swipeIndicator.className = "swipe-indicator";
+        swipeIndicator.textContent = deltaX > 0 ? "←" : "→";
+        document.body.appendChild(swipeIndicator);
+      }
+    }
+  },
+  { passive: true }
+);
+
+document.addEventListener(
+  "touchend",
+  () => {
+    if (swipeIndicator) {
+      swipeIndicator.remove();
+      swipeIndicator = null;
+    }
+  },
+  { passive: true }
+);
