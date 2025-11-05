@@ -243,7 +243,7 @@
 /* background images for the body */
 body.destination-page {
   /* Mobile first - default (mobile) image */
-  background-image: url("../../assets/destination/background-destination-mobile.jpg");
+  background-image: url("/assets/destination/background-destination-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -252,14 +252,14 @@ body.destination-page {
 /* Tablet */
 @media (min-width: 768px) {
   body.destination {
-    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
   }
 }
 
 /* Desktop / large screens */
 @media (min-width: 1024px) {
   body.destination {
-    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
   }
 }
 

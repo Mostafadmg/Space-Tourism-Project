@@ -246,19 +246,13 @@ const updateTechnologyContent = (techIndex) => {
   }, 400);
 };
 
-/* swipe feature for mobile phones*/
-
 const pages = [
   { name: "home", path: "index.html" },
   { name: "destination", path: "pages/destination.html" },
   { name: "crew", path: "pages/crew.html" },
   { name: "technology", path: "pages/technology.html" },
 ];
-/*  this function returns the index of the current page it works by
-1- getting the current path from the window location
-2- extracting the current page name from the path
-3- finding the index of the page in the pages array
-*/
+
 function getCurrentPageIndex() {
   const currentPath = window.location.pathname;
   const currentPage = currentPath.split("/").pop() || "index.html";
@@ -271,12 +265,6 @@ function getCurrentPageIndex() {
   });
 }
 
-/*
-then we create Navigation Function that takes a direction parameter ('left' or 'right') and navigates to the previous or next page accordingly.
-
-
-
-*/
 function navigateToPage(index) {
   if (index >= 0 && index < pages.length) {
     const targetPage = pages[index];
@@ -302,6 +290,7 @@ function navigateToPage(index) {
     window.location.href = targetPath;
   }
 }
+
 let touchStartX = 0;
 let touchEndX = 0;
 let touchStartY = 0;
@@ -309,6 +298,7 @@ let touchEndY = 0;
 
 const minSwipeDistance = 50;
 const maxVerticalDistance = 100;
+
 function handleSwipe() {
   const currentPageIndex = getCurrentPageIndex();
   const horizontalDistance = touchEndX - touchStartX;
@@ -331,6 +321,7 @@ function handleSwipe() {
     }
   }
 }
+
 document.addEventListener(
   "touchstart",
   (e) => {
