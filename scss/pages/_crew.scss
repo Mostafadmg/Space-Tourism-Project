@@ -173,7 +173,7 @@
 
 body.crew-page {
   /* Mobile first - default (mobile) image */
-  background-image: url("/assets/crew/background-crew-mobile.jpg");
+  background-image: url("../assets/crew/background-crew-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -182,13 +182,13 @@ body.crew-page {
 /* Tablet */
 @media (min-width: 768px) {
   body.crew-page {
-    background-image: url("/assets/");
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
   }
 }
 
 /* Desktop / large screens */
 @media (min-width: 1024px) {
   body.crew-page {
-    background-image: url("/assets/crew/background-crew-desktop.jpg");
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
   }
 }
